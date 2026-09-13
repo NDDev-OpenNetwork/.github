@@ -1,0 +1,49 @@
+schema_version: 1
+repository:
+  id: repo_01M2DB2M1QQ9WVFQ6HE2BRYJJ0
+  display_name: NDDev Open Network community standards
+  roles:
+    - docs
+  lifecycle: active
+provider:
+  type: github
+  installation: installation:github-opennetwork
+  repository_id: 1332430907
+  owner: NDDev-OpenNetwork
+  name: .github
+classification:
+  portfolios:
+    - portfolio:opennetwork-projects
+  visibility_contract: public
+  data_classification: public
+product:
+  purpose: Organization profile, community health files, contribution standards, and shared collaboration policy for NDDev Open Network repositories.
+  capabilities:
+    - Publish the NDDev Open Network organization profile
+    - Define shared contribution, security, and support guidance
+  entrypoints:
+    - change: Change the public organization profile
+      path: profile/README.md
+    - change: Change shared contribution policy
+      path: CONTRIBUTING.md
+    - change: Change organization security guidance
+      path: SECURITY.md
+policy:
+  profiles:
+    - repository-default
+    - organization-default
+  rollout_ring: standard
+git:
+  default_branch: main
+  integration: pull-request
+  branch_model: task-branches
+  handoff_pr: preferred
+  cleanup: merged-only
+agent:
+  context_profile: project-default
+  generated_agents: false
+  serena:
+    enabled: true
+    provenance_required: true
+release:
+  mode: none
